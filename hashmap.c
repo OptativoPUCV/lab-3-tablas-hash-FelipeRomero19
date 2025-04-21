@@ -42,7 +42,7 @@ int is_equal(void* key1, void* key2){
 void insertMap(HashMap * map, char * key, void * value) {
     if (key == NULL)return;
 
-    int pos = hash(key, map->capacity);
+    long pos = hash(key, map->capacity);
 
     while(map->buckets[pos] != NULL){
         if(is_equal(map->buckets[pos]->key, key)){
@@ -62,14 +62,14 @@ void insertMap(HashMap * map, char * key, void * value) {
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
     Pair **antiguo = map->buckets ;
-    int old_capacity = map->capacity ;
+    long old_capacity = map->capacity ;
     
     map->capacity *= 2 ;
     map->buckets = (Pair**)calloc(map->capacity, sizeof(Pair*)) ;
 
     map->size = 0 ;
 
-    for(int k = 0 ; k < old_capacity; k++)
+    for(long k = 0 ; k < old_capacity; k++)
     {
         if (antiguo[k] != NULL && antiguo[k]->key != NULL)
         {
@@ -94,7 +94,7 @@ HashMap * createMap(long capacity) {
 void eraseMap(HashMap * map,  char * key) {   
     if(key == NULL)return;
 
-    int pos = hash(key, map->capacity);
+    long pos = hash(key, map->capacity);
     while(map->buckets[pos] != NULL)
     {
         if(is_equal(map->buckets[pos]->key, key))
@@ -111,7 +111,7 @@ void eraseMap(HashMap * map,  char * key) {
 Pair * searchMap(HashMap * map,  char * key) {   
     if(key == NULL || map == NULL)return NULL;
 
-    int pos = hash(key, map->capacity);
+    long pos = hash(key, map->capacity);
 
     while(map->buckets[pos] != NULL)
     {
@@ -130,7 +130,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 Pair * firstMap(HashMap * map) {
     if (map == NULL || map->size == 0)return NULL;
 
-    for(int k = 0 ; k < map->capacity; k++)
+    for(long k = 0 ; k < map->capacity; k++)
     {
         if (map->buckets[k] != NULL && map->buckets[k]->key != NULL)
         {
@@ -145,7 +145,7 @@ Pair * firstMap(HashMap * map) {
 Pair * nextMap(HashMap * map) {
     if (map == NULL || map->current < 0 || map->current >= map->capacity - 1) return NULL;
 
-    for (int k = map->current + 1; k < map->capacity; k++) {
+    for (long k = map->current + 1; k < map->capacity; k++) {
         if (map->buckets[k] != NULL && map->buckets[k]->key != NULL) {
             map->current = k; 
             return map->buckets[k]; 
