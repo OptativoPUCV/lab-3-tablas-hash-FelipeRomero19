@@ -104,3 +104,9 @@ Sun, Apr 20, 2025 11:47:59 PM:
  tests:  14|1
 total_score: 60/70
 d25f3c6
+Sun, Apr 20, 2025 11:49:13 PM: 
+ hashmap.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+ tests:  17|0
+total_score: 70/70
+bdbaffe
