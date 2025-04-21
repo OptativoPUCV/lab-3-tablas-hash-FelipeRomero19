@@ -55,3 +55,20 @@ Sun, Apr 20, 2025 11:33:26 PM:
  tests:  11|2
 total_score: 50/70
 88eead8
+Sun, Apr 20, 2025 11:44:17 PM: 
+ hashmap.c | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'enlarge':
+hashmap.c:68:21: error: 'pair' undeclared (first use in this function)
+     map->buckets = (pair**)calloc(map->capacity, sizeof(Pair*)) ;
+                     ^~~~
+hashmap.c:68:21: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:68:27: error: expected expression before ')' token
+     map->buckets = (pair**)calloc(map->capacity, sizeof(Pair*)) ;
+                           ^
+hashmap.c:74:21: error: 'i' undeclared (first use in this function)
+         if (antiguo[i] != NULL && antiguo[i]->key != NULL)
+                     ^
+dbfd754

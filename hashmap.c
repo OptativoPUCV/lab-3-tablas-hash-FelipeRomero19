@@ -61,6 +61,22 @@ void insertMap(HashMap * map, char * key, void * value) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
+    Pair **antiguo = map->buckets ;
+    int old_capacity = map->capacity ;
+    
+    map->capacity *= 2 ;
+    map->buckets = (pair**)calloc(map->capacity, sizeof(Pair*)) ;
+
+    map->size = 0 ;
+
+    for(int k = 0 ; k < old_capacity; k++)
+    {
+        if (antiguo[i] != NULL && antiguo[i]->key != NULL)
+        {
+            insertMap(map, antiguo[k]->key, antiguo[k]->value);
+        }
+    }
+    free(antiguo);
 
 
 }
@@ -112,6 +128,8 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
+    if (map == NULL || map->size == 0)return NULL;
+
 
     return NULL;
 }
