@@ -26,3 +26,16 @@ Sun, Apr 20, 2025 11:27:02 PM:
  tests:  8|3
 total_score: 40/70
 f5fa64c
+Sun, Apr 20, 2025 11:33:06 PM: 
+ hashmap.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'searchMap':
+hashmap.c:96:27: error: lvalue required as left operand of assignment
+     if(key == NULL || map = NULL)return NULL;
+                           ^
+hashmap.c:100:29: error: expected ')' before numeric constant
+     while(map->buckets[pos] 1 != NULL)
+                             ^
+4774c8c
