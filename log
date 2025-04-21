@@ -49,3 +49,9 @@ hashmap.c:96:27: error: lvalue required as left operand of assignment
      if(key == NULL || map = NULL)return NULL;
                            ^
 17d0bd6
+Sun, Apr 20, 2025 11:33:26 PM: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  11|2
+total_score: 50/70
+88eead8
