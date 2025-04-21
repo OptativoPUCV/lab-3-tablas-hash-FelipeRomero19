@@ -86,3 +86,9 @@ hashmap.c:68:27: error: expected expression before ')' token
      map->buckets = (pair**)calloc(map->capacity, sizeof(Pair*)) ;
                            ^
 e4cb38b
+Sun, Apr 20, 2025 11:44:35 PM: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  12|1
+total_score: 60/70
+06a4fa0
