@@ -75,8 +75,20 @@ HashMap * createMap(long capacity) {
     return mapa;
 }
 
-void eraseMap(HashMap * map,  char * key) {    
+void eraseMap(HashMap * map,  char * key) {   
+    if(key == NULL)return;
 
+    int pos = hash(key, map->capacity);
+    while(map->buckets[pos] != NULL)
+    {
+        if(is_equal(map->buckets[pos]->key, key))
+        {
+            map->buckets[pos] = NULL ;
+            map->size--;
+            return;
+        }
+        pos = (pos + 1) % map->capacity;
+    }
 
 }
 
