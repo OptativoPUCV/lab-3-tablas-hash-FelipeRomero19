@@ -39,3 +39,13 @@ hashmap.c:100:29: error: expected ')' before numeric constant
      while(map->buckets[pos] 1 != NULL)
                              ^
 4774c8c
+Sun, Apr 20, 2025 11:33:15 PM: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'searchMap':
+hashmap.c:96:27: error: lvalue required as left operand of assignment
+     if(key == NULL || map = NULL)return NULL;
+                           ^
+17d0bd6
